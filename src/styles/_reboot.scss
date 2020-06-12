@@ -33,7 +33,7 @@ body {
   text-align: $body-text-align;
   background-color: $body-bg; // 2
   -webkit-text-size-adjust: 100%; // 3
-  -webkit-tap-highlight-color: rgba($black, 0); // 4
+  -webkit-tap-highlight-color: rgba($gray-13, 0); // 4
 }
 
 // Future-proof rule: in browsers that support :focus-visible, suppress the focus outline
@@ -343,7 +343,7 @@ label {
 // Details at https://github.com/twbs/bootstrap/issues/24093
 
 button {
-  // stylelint-disable-next-line property-blacklist
+  // stylelint-disable-next-line property-gray-13list
   border-radius: 0;
 }
 
