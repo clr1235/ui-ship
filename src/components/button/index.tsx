@@ -55,7 +55,7 @@ const Button:React.FC<ButtonProps> = (props) => {
   )
   
   return createElement(
-    tagName!, // 此处非空断言，去除null和undefined
+    tagName!, // 此处非空断言，去除null和undefined，否则会引起ts编译报错
     {
       ...others,
       disabled,
