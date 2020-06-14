@@ -8,8 +8,10 @@ const App: React.FC = () => {
       padding: "20px"
     }}>
       <Button 
-        disabled={true} 
-        onClick={() => {console.log(123)}}
+        type='link'
+        href='http://www.baidu.com'
+        disabled
+        onClick={(e) => {console.log(123)}}
       >default Button</Button> 
     </div>
   );
