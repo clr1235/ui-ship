@@ -1,7 +1,8 @@
-import React, {createElement, ButtonHTMLAttributes, AnchorHTMLAttributes} from 'react'
+import React, {createElement} from 'react'
 import classnames from 'classnames'
 
 import './button.scss'
+
 
 export type ButtonSize = 'large' | 'small' | 'default';
 export type ButtonType = 'default' | 'primary' | 'link';
@@ -20,12 +21,12 @@ export interface BaseButtonProps {
 export type AnchorButtonProps = {
   href: string;
   target?: string;
-  onClick?: React.MouseEventHandler<HTMLAnchorElement>;
+  onClick?: React.MouseEventHandler<HTMLElement>;
 } & BaseButtonProps & React.AnchorHTMLAttributes<HTMLAnchorElement>;
 
 export type NativeButtonProps = {
   htmlType?: ButtonHTMLType;
-  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  onClick?: React.MouseEventHandler<HTMLElement>;
 } & BaseButtonProps & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 export type ButtonProps = Partial<AnchorButtonProps | NativeButtonProps>; 
@@ -33,20 +34,22 @@ export type ButtonProps = Partial<AnchorButtonProps | NativeButtonProps>;
 
 
 const Button:React.FC<ButtonProps> = (props) => {
-  console.log(props, 'props-=====')
   const {
     className, 
     disabled,
     size,
     type,
     children,
+    block,
+    onClick,
     ...others
   } = props;
   // btn btn-lg btn-primary
   const classes = classnames('vui-btn', className, {
     [`vui-btn-${type}`]: type,
     [`vui-btn-${size}`]: size,
-    'disabled': type === 'link' && disabled
+    'disabled': type === 'link' && disabled,
+    'block': block
     }
   )
 
@@ -59,6 +62,7 @@ const Button:React.FC<ButtonProps> = (props) => {
       ...others,
       disabled: type !== 'link' ? disabled : null,
       className: classes,
+      onClick
     },
     children
   )
@@ -70,7 +74,9 @@ Button.defaultProps = {
   type: 'default',
   size: 'default',
   disabled: false,
-  onClick: () => {}
+  onClick: () => {
+    
+  }
 }
 
 export default Button;

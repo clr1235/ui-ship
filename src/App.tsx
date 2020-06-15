@@ -11,8 +11,20 @@ const App: React.FC = () => {
         type='link'
         href='http://www.baidu.com'
         disabled
-        onClick={(e) => {console.log(123)}}
+        target="_blank"
+        onClick={() => {console.log('这是a标签')}}
+      >a  button</Button> 
+      <Button 
+        onClick={() => {
+          console.log(234);
+        }}
       >default Button</Button> 
+      <Button type="primary">primary button</Button>
+      <Button size="large">large button</Button>
+      <Button size="small">small button</Button>
+      <div>
+        <Button block>block button</Button>
+      </div>
     </div>
   );
 }
