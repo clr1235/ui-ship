@@ -62,7 +62,15 @@ const Button:React.FC<ButtonProps> = (props) => {
       ...others,
       disabled: type !== 'link' ? disabled : null,
       className: classes,
-      onClick
+      onClick: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+        // 此处MouseEvent后必须跟范型，否则下边调用onClick方法时ts编译会报错
+        if(type! === 'link'){
+          e.preventDefault();
+          e.stopPropagation();
+          return 
+        }
+        onClick!(e)
+      }
     },
     children
   )
