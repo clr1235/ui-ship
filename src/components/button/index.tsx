@@ -56,7 +56,6 @@ const Button:React.FC<ButtonProps> = (props) => {
   const ele = type === 'link' ? 'a' : 'button';
   
   return createElement(
-    // tagName!, // 此处非空断言，去除null和undefined，否则会引起ts编译报错
     ele,
     {
       ...others,
@@ -69,7 +68,7 @@ const Button:React.FC<ButtonProps> = (props) => {
           e.stopPropagation();
           return 
         }
-        onClick!(e)
+        onClick!(e) // 此处!为非空断言，去除null和undefined，否则会引起ts编译报错
       }
     },
     children
