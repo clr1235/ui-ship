@@ -1,5 +1,6 @@
 import React from 'react'
 import Button from './components/button'
+import Alert from './components/alert'
 
 
 const App: React.FC = () => {
@@ -24,6 +25,24 @@ const App: React.FC = () => {
       <Button size="small">small button</Button>
       <div>
         <Button block>block button</Button>
+      </div>
+        <br/>
+      <div>
+        <Alert message="这是一个alert" showIcon={true}/>
+        <br/>
+        <Alert message="success icon的alert" showIcon={true} type="success" closable
+          description="Warning Text Warning Text Warning TextW arning Text Warning Text Warning TextWarning Text
+          测试下文字长度吧，测试下文字长度吧，测试下文字长度吧，测试下文字长度吧，测试下文字长度吧，测试下文字长度吧，测试下文字长度吧，测试下文字长度吧，测试下文字长度吧，"
+        />
+        <br/>
+        <Alert message="warning icon的alert" showIcon={true} type="warning"/>
+        <br/>
+        <Alert message="error icon的alert" showIcon={true} type="error" closable
+          onClose={() => {  
+            console.log('关闭的回调')
+          }}
+        />
+        
       </div>
     </div>
   );
