@@ -1,6 +1,4 @@
-import React from 'react'
-import classnames from 'classnames'
+import Menu from './menu'
+import MenuItem from './menuItem'
 
-export interface menuProps {
-  
-}
+export default Menu;

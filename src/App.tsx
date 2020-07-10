@@ -1,6 +1,7 @@
 import React from 'react'
 import Button from './components/button'
 import Alert from './components/alert'
+import Menu from './components/menu'
 
 
 const App: React.FC = () => {
@@ -43,6 +44,14 @@ const App: React.FC = () => {
           }}
         />
         
+      </div>
+      <br/>
+      <div>
+        <Menu>
+          <li>菜单一</li>
+          <li>菜单二</li>
+          <li>菜单三</li>
+        </Menu>
       </div>
     </div>
   );
