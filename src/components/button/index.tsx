@@ -5,8 +5,9 @@ import './button.scss'
 
 
 export type ButtonSize = 'large' | 'small' | 'default';
-export type ButtonType = 'default' | 'primary' | 'link';
+export type ButtonType = 'default' | 'primary' | 'text';
 export type ButtonHTMLType = 'submit' | 'button' | 'reset';
+export type ButtonShapeType = 'circle' | 'round';
 
 // 定义接口相当于 props-types
 export interface BaseButtonProps {
@@ -16,15 +17,17 @@ export interface BaseButtonProps {
   type?: ButtonType;
   block?: boolean;
   children: React.ReactNode;
+  shape?: ButtonShapeType;
 }
 
 export type AnchorButtonProps = {
-  href: string;
+  href?: string;
   target?: string;
   onClick?: React.MouseEventHandler<HTMLElement>;
 } & BaseButtonProps & React.AnchorHTMLAttributes<HTMLAnchorElement>;
 
 export type NativeButtonProps = {
+  href?:string;
   htmlType?: ButtonHTMLType;
   onClick?: React.MouseEventHandler<HTMLElement>;
 } & BaseButtonProps & React.ButtonHTMLAttributes<HTMLButtonElement>;
@@ -41,35 +44,36 @@ const Button:React.FC<ButtonProps> = (props) => {
     type,
     children,
     block,
+    href,
+    shape,
     onClick,
     ...others
   } = props;
+  
   // btn btn-lg btn-primary
   const classes = classnames('vui-btn', className, {
     [`vui-btn-${type}`]: type,
     [`vui-btn-${size}`]: size,
-    'disabled': type === 'link' && disabled,
+    [`vui-btn-${shape}`]: size,
+    'disabled': disabled,
     'block': block
     }
   )
 
-  const ele = type === 'link' ? 'a' : 'button';
+  const ele = href ? 'a' : 'button';
   
   return createElement(
     ele,
     {
       ...others,
-      disabled: type !== 'link' ? disabled : null,
+      href: href ? href : null,
+      disabled: disabled,
+      type: type,
       className: classes,
-      onClick: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+      onClick: !disabled ? (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         // 此处MouseEvent后必须跟范型，否则下边调用onClick方法时ts编译会报错
-        if(type! === 'link'){
-          e.preventDefault();
-          e.stopPropagation();
-          return 
-        }
         onClick!(e) // 此处!为非空断言，去除null和undefined，否则会引起ts编译报错
-      }
+      } : null
     },
     children
   )
@@ -81,9 +85,8 @@ Button.defaultProps = {
   type: 'default',
   size: 'default',
   disabled: false,
-  onClick: () => {
-    
-  }
+  shape: 'round',
+  onClick: () => {}
 }
 
 export default Button;

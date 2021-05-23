@@ -3,16 +3,14 @@ import Button from './components/button'
 import Alert from './components/alert'
 import Menu from './components/menu'
 
-
 const App: React.FC = () => {
   return (
     <div className="App" style={{
       padding: "20px"
     }}>
       <Button 
-        type='link'
+        type='text'
         href='http://www.baidu.com'
-        disabled
         target="_blank"
         onClick={() => {console.log('这是a标签')}}
       >a  button</Button> 
@@ -20,6 +18,7 @@ const App: React.FC = () => {
         onClick={() => {
           console.log(234);
         }}
+        shape="circle"
       >default Button</Button> 
       <Button type="primary">primary button</Button>
       <Button size="large">large button</Button>

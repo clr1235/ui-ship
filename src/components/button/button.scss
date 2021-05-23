@@ -26,7 +26,6 @@
   margin: 0;
   border: 1px solid transparent;
   border-color: $gray-5;
-  border-radius: 4px;
 
   cursor: pointer;
   text-transform: none;
@@ -59,6 +58,43 @@
     color: $blue;
     border-color: $blue;
   }
+  // shape类型
+  &-round {
+    border-radius: 4px;
+  }
+  &-circle {
+    border-radius: 50%;
+  }
+  &-circle.vui-btn-default {
+      min-width: 32px;
+      padding: 0;
+      height: 32px;
+      width: 32px;
+  }
+  &-circle.vui-btn-large {
+      min-width: 40px;
+      padding: 2px;
+      height: 40px;
+      width: 40px;
+  }
+  &-circle.vui-btn-small {
+      min-width: 28px;
+      padding: 0;
+      height: 28px;
+      width: 28px;
+  }
+  // size大小
+  &-large {
+    font-size: 16px;
+    height: 40px;
+    padding: 6.4px 15px;
+  }
+  &-small {
+    font-size: 14px;
+    height: 28px;
+    padding: 0 7px;
+  }
+
 
   &[disabled] {
     cursor: not-allowed;
@@ -85,7 +121,7 @@
   
 }
 // a 标签
-.vui-btn-link {
+.vui-btn-text {
   color: $blue;
   border: 0;
   border-radius: 0;
@@ -123,17 +159,7 @@
   }
 }
 
-.vui-btn-large {
-  font-size: 16px;
-  height: 40px;
-  padding: 6.4px 15px;
-}
 
-.vui-btn-small {
-  font-size: 14px;
-  height: 24px;
-  padding: 0 7px;
-}
 
 
 

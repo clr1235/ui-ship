@@ -8,4 +8,4 @@
 
   解决：使用ts的非空断言语句  ！  处理。
   
-
+npm install normalize.css 重置浏览器css样式
