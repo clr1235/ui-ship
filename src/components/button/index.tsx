@@ -51,10 +51,10 @@ const Button:React.FC<ButtonProps> = (props) => {
   } = props;
   
   // btn btn-lg btn-primary
-  const classes = classnames('vui-btn', className, {
-    [`vui-btn-${type}`]: type,
-    [`vui-btn-${size}`]: size,
-    [`vui-btn-${shape}`]: size,
+  const classes = classnames('lr-btn', className, {
+    [`lr-btn-${type}`]: type,
+    [`lr-btn-${size}`]: size,
+    [`lr-btn-${shape}`]: size,
     'disabled': disabled,
     'block': block
     }

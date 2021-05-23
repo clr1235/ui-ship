@@ -17,7 +17,7 @@ const MenuItem: React.FC<MenuItemProps> = (props) => {
     children
   } = props;
 
-  const classes = classnames('vui-menu-item', className, {
+  const classes = classnames('lr-menu-item', className, {
     'is-disabled': disabled
   })
 

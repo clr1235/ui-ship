@@ -35,10 +35,10 @@ const Alert: React.FC<AlertProps> = (props) => {
 
   const [closed, setClosed] = useState(false)
 
-  const classes = classnames('vui-alert', className, {
-    [`vui-alert-${type}`]: type,
-    [`vui-alert-padding-right`]: closable,
-    [`vui-alert-close`]: closed
+  const classes = classnames('lr-alert', className, {
+    [`lr-alert-${type}`]: type,
+    [`lr-alert-padding-right`]: closable,
+    [`lr-alert-close`]: closed
   })
 
   const TypeIcon = {
@@ -60,8 +60,8 @@ const Alert: React.FC<AlertProps> = (props) => {
       {
         showIcon && 
           <TypeIcon 
-            className={classnames(`vui-alert-icon-${type}`, {
-              'vui-alert-icon': showIcon
+            className={classnames(`lr-alert-icon-${type}`, {
+              'lr-alert-icon': showIcon
             })}
           />
       }
@@ -74,7 +74,7 @@ const Alert: React.FC<AlertProps> = (props) => {
         closable &&
         <span 
           className={classnames({
-            'vui-alert-close-btn': closable
+            'lr-alert-close-btn': closable
           })} 
           onClick={closeAlert}
         >

@@ -1,6 +1,6 @@
 @import "../../styles/variables";
 
-.vui-btn{
+.lr-btn{
   display: inline-block;
 
   white-space: nowrap;
@@ -65,19 +65,19 @@
   &-circle {
     border-radius: 50%;
   }
-  &-circle.vui-btn-default {
+  &-circle.lr-btn-default {
       min-width: 32px;
       padding: 0;
       height: 32px;
       width: 32px;
   }
-  &-circle.vui-btn-large {
+  &-circle.lr-btn-large {
       min-width: 40px;
       padding: 2px;
       height: 40px;
       width: 40px;
   }
-  &-circle.vui-btn-small {
+  &-circle.lr-btn-small {
       min-width: 28px;
       padding: 0;
       height: 28px;
@@ -121,7 +121,7 @@
   
 }
 // a 标签
-.vui-btn-text {
+.lr-btn-text {
   color: $blue;
   border: 0;
   border-radius: 0;
@@ -146,7 +146,7 @@
   }
 }
 
-.vui-btn-primary {
+.lr-btn-primary {
   background-color: $blue;
   color: #fff;
   box-shadow: none;

@@ -1,6 +1,6 @@
 @import "../../styles/variables";
 
-.vui-alert {
+.lr-alert {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin: 0;
@@ -20,55 +20,55 @@
 
 }
 
-.vui-alert-info {
+.lr-alert-info {
   background-color: #e6f7ff;
   border-color: #91d5ff;
 
 }
-.vui-alert-error {
+.lr-alert-error {
   background-color: #fff2f0;
   border-color: #ffccc7;
 }
-.vui-alert-success {
+.lr-alert-success {
   background-color: #f6ffed;
   border-color: #b7eb8f;
 }
-.vui-alert-warning {
+.lr-alert-warning {
   background-color: #fffbe6;
   border-color: #ffe58f;
 }
 
-.vui-alert-icon{
+.lr-alert-icon{
   position: absolute;
   top: 12px;
   left: 12px;
 }
-.vui-alert-icon-info {
+.lr-alert-icon-info {
   color: #1890ff;
 }
-.vui-alert-icon-success {
+.lr-alert-icon-success {
   color: #52c41a;
 }
-.vui-alert-icon-error {
+.lr-alert-icon-error {
   color: #ff4d4f;
 }
-.vui-alert-icon-warning {
+.lr-alert-icon-warning {
   color: #faad14;
 }
 
 
-.vui-alert-close-btn{
+.lr-alert-close-btn{
   position: absolute;
   right: 10px;
   top: 2px;
   cursor: pointer;
 }
 
-.vui-alert-padding-right{
+.lr-alert-padding-right{
   padding-right: 37px;
 }
 
-.vui-alert-close{
+.lr-alert-close{
   animation: antAlertSlideUpOut 0.15s cubic-bezier(0.78, 0.14, 0.15, 0.86);
   animation-fill-mode: both;
 }

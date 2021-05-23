@@ -42,7 +42,7 @@ const Menu: React.FC<menuProps> = (props) => {
 
   const [ currentActive, setActive ] = useState(defaultSelectedKeys)
 
-  const classes = classnames('vui-menu', classnames, {
+  const classes = classnames('lr-menu', classnames, {
     'menu-vertical': mode === 'vertical'
   })
 
